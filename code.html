@@ -260,7 +260,7 @@ Uglify can only work with buffers, not streams.</td>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,js]
-++++
+----
 vfs
   .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
   .pipe(tap((file) =&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
@@ -269,7 +269,7 @@ vfs
   .pipe(buffer()) <i class="conum" data-value="2"></i><b>(2)</b>
   .pipe(uglify())
   .pipe(gulp.dest('build'))
-++++
+----
 &lt;1&gt; The tap function is used to wiretap the data in the pipe.
 &lt;2&gt; Wrap each streaming file in a buffer so the files can be processed by uglify.
 Uglify can only work with buffers, not streams.</code></pre>
@@ -305,9 +305,9 @@ Uglify can only work with buffers, not streams.</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,shell]
-++++
+----
 alias ducksort=""du -cks * | sort -n""
-++++</code></pre>
+----</code></pre>
 </div>
 </div>
 </div>
@@ -334,7 +334,7 @@ alias ducksort=""du -cks * | sort -n""
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,xml]
-++++
+----
 &lt;root&gt;
     &lt;branch&gt;
         &lt;leafs length="130"&gt;
@@ -342,7 +342,7 @@ alias ducksort=""du -cks * | sort -n""
         &lt;/leafs&gt;
     &lt;/branch&gt;
 &lt;/root&gt;
-++++</code></pre>
+----</code></pre>
 </div>
 </div>
 </div>
@@ -415,9 +415,12 @@ src/
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-Java hljs" data-lang="Java">while (true) {
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source, Java]
+----
+while (true) {
   System.out.println("toto"); <i class="conum" data-value="1"></i><b>(1)</b>
-}</code></pre>
+}
+----</code></pre>
 </div>
 </div>
 <div class="colist arabic">
