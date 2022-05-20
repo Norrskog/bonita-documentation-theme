@@ -7,7 +7,6 @@
 <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.css" integrity="sha256-tY3FCmL2d8yoJBOVyC2aOxdixg8sLT6CHlDWX/VUJaY=" crossorigin="anonymous">-->
 
 
-<link rel="stylesheet" href="_/stylesheets/vendor/asciinema-player.css">
 <link rel="stylesheet" href="_/stylesheets/vendor/libs.css">
 <link rel="stylesheet" href="_/stylesheets/site.css">
 <link id="highlight-style-lnk" rel="stylesheet" href="_/stylesheets/vendor/highlight-light.css">
@@ -236,7 +235,6 @@
   </div>
 </footer>
 <script>window.uiRootPath = '_'</script>
-<script async src="_/js/vendor/asciinema-player.min.js"></script>
 <script src="_/js/vendor/highlight.min.js"></script>
 <script src="_/js/vendor/libs.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -285,6 +283,14 @@
           apiKey: '16267f96d135c47df8454efd5b448c9a',
           });
       */
+
+    let asciinemaPlayers = document.querySelectorAll('asciinema-player');
+    asciinemaPlayers.forEach(htmlPlayer => {
+      let options = {fit: false};
+      htmlPlayer.getAttributeNames().forEach(key => options[key] = htmlPlayer.getAttribute(key));
+      AsciinemaPlayer.create(htmlPlayer.getAttribute('src'), htmlPlayer, options);
+    });
+
 </script>
 
 <script>
