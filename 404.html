@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Page Not Found | Bonita Documentation Theme Preview</title>    <meta name="generator" content="Antora dev-for-bonita-documentation-theme">
-<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.css" integrity="sha256-tY3FCmL2d8yoJBOVyC2aOxdixg8sLT6CHlDWX/VUJaY=" crossorigin="anonymous">-->
-
-
 <link rel="stylesheet" href="_/stylesheets/vendor/libs.css">
 <link rel="stylesheet" href="_/stylesheets/site.css">
 <link id="highlight-style-lnk" rel="stylesheet" href="_/stylesheets/vendor/highlight-light.css">
@@ -35,9 +32,6 @@
     </div>
 
     <div class="navbar-end" id="search-container">
-      <div class="navbar-item search-item hide-for-print">
-        <div id="docsearch"></div>
-      </div>
 
       <div class="theme-switch-wrapper">
         <input type="checkbox" class="checkbox" onclick="toggleDarkThemeMode(this)" id="check">
@@ -136,18 +130,15 @@
 </div>
   <div class="content">
 <article class="doc">
-    <div class="pagenotfound">
-      <img src="_/img/404_bonita_page.png" alt="404 drawing" style="">
-      <p>OOPS, LOOKS LIKE THE PAGE CANNOT BE FOUND...</p>
-    </div>
-    <div class="paragraph">
-    <p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken.
-      If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
-    </div>
-  </article>
-<aside class="toc sidebar" data-title="Contents" data-levels="2">
-  <div class="toc-menu"></div>
-</aside>
+<div class="pagenotfound">
+  <img src="_/img/404_bonita_page.png" alt="404 drawing" style="">
+  <p>OOPS, LOOKS LIKE THE PAGE CANNOT BE FOUND...</p>
+</div>
+<div class="paragraph">
+  <p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken.
+    If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
+</div>
+</article>
   </div>
 </main>
 </div>
@@ -240,50 +231,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 <script src="_/js/site.js"></script>
 
-<script>
-  // var ALGOLIA_INSIGHTS_SRC = "https://cdn.jsdelivr.net/npm/search-insights@1.7.1";
-  //
-  // !function (e, a, t, n, s, i, c) {
-  //   e.AlgoliaAnalyticsObject = s, e[s] = e[s] || function () {
-  //     (e[s].queue = e[s].queue || []).push(arguments)
-  //   }, i = a.createElement(t), c = a.getElementsByTagName(t)[0],
-  //     i.async = 1, i.src = n, c.parentNode.insertBefore(i, c)
-  // }(window, document, "script", ALGOLIA_INSIGHTS_SRC, "aa");
-</script>
 
-<script type="text/javascript">
-  docsearch({
-    container: '#docsearch',
-    appId: 'LWD25NX3CD',
-    apiKey: '6408f799f329e3a010e6a5ac397210d8',
-    indexName: 'bonitasoft',
-    hitsPerPage: 20,
-    searchParameters: {
-      facetFilters: ["version:", "tags:"],
-    }
-  });
-  /*
-          docsearch({
-          algoliaOptions: {
-              clickAnalytics: true,
-          },
-          handleSelected: function (input, event, suggestion, datasetNumber, context) {
-              sendClickEvent(lastQueryID, lastQueryHits, suggestion);
-              input.setVal('');
-              window.location.assign(suggestion.url);
-          },
-          queryDataCallback: function (data) {
-              lastQueryID = data.results[0].queryID;
-              lastQueryHits = data.results[0].hits;
-          }
-          });
-
-          aa('init', {
-          appId: 'BH4D9OD16A',
-          apiKey: '16267f96d135c47df8454efd5b448c9a',
-          });
-      */
-</script>
 
 <script>
   let asciinemaPlayers = document.querySelectorAll('asciinema-player');
