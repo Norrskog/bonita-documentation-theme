@@ -3459,8 +3459,6 @@ footer .footer-body .footer-footer .footer-bonita-logo {
 
 .card-index a:hover {
   border: 2px solid var(--color-red-bonita);
-  background-color: var(--color-red-bonita);
-  color: var(--color-focused);
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
   top: -3px;
