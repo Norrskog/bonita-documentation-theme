@@ -3103,8 +3103,8 @@ footer {
   display: block;
   background-color: var(--color-footer);
   color: var(--body-font-color);
-  padding: 5rem;
-  padding-bottom: 2rem;
+  padding: 2rem;
+  padding-bottom: 1rem;
 }
 
 footer .footer-body {
@@ -3199,6 +3199,15 @@ footer .footer-body .footer-footer .footer-bonita-logo {
   display: block;
   -webkit-filter: var(--filter-logo-footer);
           filter: var(--filter-logo-footer);
+}
+
+.logos {
+  padding-left: 0.5rem;
+}
+
+.logo {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 @media screen and (max-width: 767px) {
