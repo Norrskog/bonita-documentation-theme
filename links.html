@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Source Code | Bonita Documentation Theme Preview</title>    <meta name="generator" content="Antora dev-for-bonita-documentation-theme">
+<title>Link between components | Bonita Documentation Theme Preview</title>    <meta name="generator" content="Antora dev-for-bonita-documentation-theme">
 <link rel="stylesheet" href="_/stylesheets/vendor/libs.css">
 <link rel="stylesheet" href="_/stylesheets/site.css">
 <link id="highlight-style-lnk" rel="stylesheet" href="_/stylesheets/vendor/highlight-light.css">
@@ -95,10 +95,10 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="cards.html">Cards</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="code.html">Code</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="links.html">Links</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -223,215 +223,52 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Source Code</h1>
-<div class="sect1">
-<h2 id="_javascript"><a class="anchor" href="#_javascript"></a>JavaScript</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">vfs
-  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
-  .pipe(tap((file) =&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
-    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
-  }))
-  .pipe(buffer()) <i class="conum" data-value="2"></i><b>(2)</b>
-  .pipe(uglify())
-  .pipe(gulp.dest('build'))</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The tap function is used to wiretap the data in the pipe.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Wrap each streaming file in a buffer so the files can be processed by uglify.
-Uglify can only work with buffers, not streams.</td>
-</tr>
-</table>
-</div>
-<details>
-<summary class="title">Click to see the <strong>source code</strong></summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,js]
-----
-vfs
-  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
-  .pipe(tap((file) =&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
-    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
-  }))
-  .pipe(buffer()) <i class="conum" data-value="2"></i><b>(2)</b>
-  .pipe(uglify())
-  .pipe(gulp.dest('build'))
-----
-&lt;1&gt; The tap function is used to wiretap the data in the pipe.
-&lt;2&gt; Wrap each streaming file in a buffer so the files can be processed by uglify.
-Uglify can only work with buffers, not streams.</code></pre>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>should be replaced by <code>&lt;1&gt;</code> (same thing for &lt;2&gt;)</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</details>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_shell"><a class="anchor" href="#_shell"></a>Shell</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias ducksort=""du -cks * | sort -n""</code></pre>
-</div>
-</div>
-<details>
-<summary class="title">Click to see the <strong>source code</strong></summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,shell]
-----
-alias ducksort=""du -cks * | sort -n""
-----</code></pre>
-</div>
-</div>
-</div>
-</details>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_xml"><a class="anchor" href="#_xml"></a>XML</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;root&gt;
-    &lt;branch&gt;
-        &lt;leafs length="130"&gt;
-            &lt;leaf color="yellow" /&gt;
-        &lt;/leafs&gt;
-    &lt;/branch&gt;
-&lt;/root&gt;</code></pre>
-</div>
-</div>
-<details>
-<summary class="title">Click to see the <strong>source code</strong></summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,xml]
-----
-&lt;root&gt;
-    &lt;branch&gt;
-        &lt;leafs length="130"&gt;
-            &lt;leaf color="yellow" /&gt;
-        &lt;/leafs&gt;
-    &lt;/branch&gt;
-&lt;/root&gt;
-----</code></pre>
-</div>
-</div>
-</div>
-</details>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_directory_list"><a class="anchor" href="#_directory_list"></a>Directory list</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>pom.xml
-src/
-  main/
-    java/
-      HelloWorld.java
-  test/
-    java/
-      HelloWorldTest.java</pre>
-</div>
-</div>
-<details>
-<summary class="title">Click to see the <strong>source code</strong></summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">....
-pom.xml
-src/
-  main/
-    java/
-      HelloWorld.java
-  test/
-    java/
-      HelloWorldTest.java
-....</code></pre>
-</div>
-</div>
-</div>
-</details>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_for_theme_tests_only"><a class="anchor" href="#_for_theme_tests_only"></a>For theme tests only</h2>
-<div class="sectionbody">
+<h1 class="page">Link between components</h1>
 <div class="paragraph">
-<p>Check that the small code block <code>toto</code> is correctly highlighted in the call out of the block code.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-Java hljs" data-lang="Java">while (true) {
-  System.out.println("toto"); <i class="conum" data-value="1"></i><b>(1)</b>
-}</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The word <code>toto</code> is commonly used in examples, it probably refers to our inner self.</td>
-</tr>
-</table>
+<p>You can adding link between two components or between versions of the same component. To do it, you <strong>must</strong> use the <code>xref</code> syntax.</p>
 </div>
 <div class="paragraph">
-<p>Same check but when code is in a <code>collapsible</code>
-.Click to see code</p>
+<p>The general form of a xref is <code>xref:&lt;version&gt;@&lt;component_name&gt;:&lt;module&gt;:&lt;page&gt;#anchor</code> and some elements are optional (version, module and anchor).</p>
 </div>
-<details>
-<summary class="title">Details</summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source, Java]
-----
-while (true) {
-  System.out.println("toto"); <i class="conum" data-value="1"></i><b>(1)</b>
-}
-----</code></pre>
+<div class="paragraph">
+<p><strong>Some example for you:</strong></p>
 </div>
-</div>
-<div class="colist arabic">
-<table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
 <tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The word <code>toto</code> is commonly used in examples, it probably refers to our inner self.</td>
+<th class="tableblock halign-left valign-top">Code Synthax</th>
+<th class="tableblock halign-left valign-top">Comments</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xref:ROOT:resource-management.adoc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a page in same component and same version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xref:bonita::about.adoc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a page in same version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xref:2022.2@bonita:ROOT:what-is-bonita.adoc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a page in same version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xref:2023.1@bonita::release-notes.adoc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a page of a given version in the ROOT module (implicit)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xref:2023.1@bonita:version-update:update-tool-overview.adoc#prerequisites</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a page of a given version in the version-update module targeting an anchor</p></td>
+</tr>
+</tbody>
 </table>
-</div>
-</div>
-</details>
-</div>
+<div class="paragraph">
+<p>You can find more details in <a href="https://github.com/bonitasoft/bonita-documentation-site/blob/master/docs/content/CONTRIBUTING.adoc#adding-link-between-two-components-or-between-versions-of-the-same-component">our contributing documentation guide</a>.</p>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
