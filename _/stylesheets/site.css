@@ -812,10 +812,6 @@ html.is-clipped--nav {
   color: inherit;
 }
 
-.toolbar .edit-this-page a {
-  color: var(--toolbar-muted-color);
-}
-
 .toolbar.toolbar-wrap {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -859,9 +855,19 @@ html.is-clipped--nav {
           filter: var(--filter-icon);
 }
 
-.edit-this-page {
+.page-icons {
   display: none;
   padding-right: 0.5rem;
+  -webkit-filter: var(--filter-icon);
+  filter: var(--filter-icon);
+}
+
+.page-icons a:hover {
+  text-decoration: none;
+}
+
+.page-icon {
+  padding-left: 0.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -869,7 +875,7 @@ html.is-clipped--nav {
     display: none;
   }
 
-  .edit-this-page {
+  .page-icons {
     display: block;
   }
 }
