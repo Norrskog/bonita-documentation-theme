@@ -874,11 +874,12 @@ html.is-clipped--nav {
   .nav-toggle {
     display: none;
   }
-
-  .page-icons {
-    display: block;
-  }
 }
+.page-icons {
+  display: block;
+  margin-left: auto;
+}
+
 .message-block {
   text-align: center;
   width: 100%;
