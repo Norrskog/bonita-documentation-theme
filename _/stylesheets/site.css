@@ -115,6 +115,7 @@
   --color-admonition-link: #0077ff;
   --color-link-hover: #1565c0;
   --color-nav-item: var(--color-blue-bonita);
+  --color-nav-item-hover-background: #ebf2f2;
   --color-admonition-note: #217de7;
   --color-admonition-note-bg: #217de72a;
   --color-admonition-note-text: #0250a9;
@@ -182,6 +183,7 @@
   --nav-muted-color: var(--color-gray-70);
   --nav-panel-divider-color: var(--color-smoke-90);
   --nav-secondary-background: var(--color-smoke-70);
+  --nav-hover-background: var(--color-nav-item-hover-background);
   --toolbar-background: var(--panel-background);
   --toolbar-border-color: var(--panel-border-color);
   --toolbar-font-color: var(--color-gray-70);
@@ -191,6 +193,7 @@
   --toc-font-color: var(--nav-muted-color);
   --toc-heading-font-color: var(--color-higlight);
   --toc-border-color: var(--panel-border-color);
+  --toc-active-background-color: var(--color-smoke-90);
   --toc-line-height: 1.2;
   --doc-font-color: var(--color-jet-50);
   --docsearch-text-color: var(--doc-font-color);
@@ -310,6 +313,7 @@ html[data-theme=dark] {
   --color-card-border: #9ba9c6;
   --color-code-background: #30334b;
   --color-code-font: #f7962e;
+  --color-nav-item-hover-background: #262a2d;
   --color-troubleshooting-border: #f5c80071;
   --filter-icon: invert(100%) sepia(0%) saturate(7500%) hue-rotate(39deg) brightness(112%) contrast(112%);
   --filter-icon-search: invert(100%) sepia(0%) saturate(7500%) hue-rotate(39deg) brightness(112%) contrast(112%);
@@ -648,7 +652,7 @@ html.is-clipped--nav {
 
 .nav-menu h3.title {
   color: var(--nav-heading-font-color);
-  font-size: inherit;
+  font-size: 1.4em;
   font-weight: var(--body-font-weight-bold);
   margin: 0;
   padding: 0.25em 0 0.125em;
@@ -669,7 +673,6 @@ html.is-clipped--nav {
 
 .nav-item {
   list-style: none;
-  margin-top: 0.5em;
 }
 
 .nav-item:not(.is-active) > .nav-list {
@@ -684,7 +687,7 @@ html.is-clipped--nav {
   position: absolute;
   height: calc(var(--nav-line-height) * 1em);
   width: calc(var(--nav-line-height) * 1em);
-  margin-top: -0.05em;
+  margin-top: 0.2em;
   margin-left: calc(var(--nav-line-height) * -1em);
 }
 
@@ -702,16 +705,28 @@ html.is-clipped--nav {
           transform: rotate(90deg);
 }
 
-.nav-link:hover {
-  color: var(--color-higlight-link);
+.nav-link,
+.nav-text {
+  display: block;
+  padding: 0.3rem 0.3rem;
+  margin: 0 -0.3rem;
+  border-radius: 3px;
 }
 
-.is-current-page > .nav-link {
-  color: var(--color-higlight-link);
+.nav-link:hover,
+.nav-text:hover {
+  text-decoration: none;
+  background: var(--nav-hover-background);
+  color: #06c;
 }
 
-.is-current-page > .nav-text {
+.is-current-page > .nav-link,
+.is-current-page > .nav-text,
+.is-current-page > .nav-link:hover,
+.is-current-page > .nav-text:hover {
   font-weight: var(--body-font-weight-bold);
+  background: var(--toc-active-background-color);
+  color: var(--toc-active-font-color);
 }
 
 @media screen and (min-width: 769px) {
